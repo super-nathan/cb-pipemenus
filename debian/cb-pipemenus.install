@@ -1,0 +1,9 @@
+./cb-help-pipemenu /usr/bin
+./cb-libreoffice-pipemenu /usr/bin
+./cb-lock /usr/bin
+./cb-places-pipemenu /usr/bin
+./cb-printing-pipemenu /usr/bin
+./cb-recent-files-pipemenu /usr/bin
+./cb-remote-desktop-pipemenu /usr/bin
+./cb-sshconfig-pipemenu /usr/bin
+./cb-x-www-browser-pipemenu /usr/bin

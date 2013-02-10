@@ -1,0 +1,348 @@
+#!/bin/bash
+# ---------------------------------------------------------------------
+# Written for CrunchBang Linux <http://crunchbang.org/>
+# by Philip Newborough (aka corenominal) <corenominal@corenominal.org>
+# ---------------------------------------------------------------------
+
+pathto=$(readlink -f "$0" | sed 's%/*[^/]\+/*$%%')
+
+if [[ -f $pathto/cb-include.cfg ]]
+then
+    source "$pathto/cb-include.cfg"
+else
+    echo "  Failed to locate cb-include.cfg"
+    exit 1
+fi
+
+I=0
+
+if [ "$1" = "--chromium-browser" ]; then
+    terminator --title="Install Chromium Browser" --command="cb-x-www-browser-pipemenu --install-chromium-browser"
+    exit 0
+fi
+
+if [ "$1" = "--iceweasel" ]; then
+    terminator --title="Install Iceweasel Browser" --command="cb-x-www-browser-pipemenu --install-iceweasel"
+    exit 0
+fi
+
+if [ "$1" = "--midori" ]; then
+    terminator --title="Install Midori Browser" --command="cb-x-www-browser-pipemenu --install-midori"
+    exit 0
+fi
+
+if [ "$1" = "--netsurf" ]; then
+    terminator --title="Install Netsurf Browser" --command="cb-x-www-browser-pipemenu --install-netsurf"
+    exit 0
+fi
+
+if [ "$1" = "--install-chromium-browser" ]; then
+    clear
+    echo ""
+    echo "  INSTALL CHROMIUM BROWSER"
+    echo "  ------------------------"
+    echo "  This script will install Chromium."
+    echo ""
+    echo -n "  Run the installer now? (Y|n) > "
+    read a
+    if [ "$a" = "y" ] || [ "$a" = "Y" ] || \
+    [ "$a" = "" ]; then
+        
+        connectiontest
+        clear
+        echo "  Updating sources..."
+		sleep 2s
+		sudo apt-get update
+		clear
+        
+        
+        if ! sudo apt-get install -y chromium-browser; then
+            clear
+            echo ""
+            echo "  There was a problem installing Chromium."
+            echo ""
+            echo "  Hit any key to try again, or \"q\" to quit..."
+            read -n1 a
+            if [ "$a" = "q" ] || [ "$a" = "Q" ]; then
+                clear
+                exit 0
+            else
+                cb-x-www-browser-pipemenu --install-chromium-browser
+                exit 0
+            fi
+        else
+            clear
+            echo ""
+            echo "  Chromium has been installed successfully."
+            echo ""
+            echo "  Hit any key to exit..."
+            read -n1 a
+            exit 0
+        fi
+    else
+        exit 0
+    fi
+fi
+
+if [ "$1" = "--install-iceweasel" ]; then
+    clear
+    echo ""
+    echo "  INSTALL ICEWEASEL BROWSER"
+    echo "  -------------------------"
+    echo "  This script will install Iceweasel."
+    echo ""
+    echo -n "  Run the installer now? (Y|n) > "
+    read a
+    if [ "$a" = "y" ] || [ "$a" = "Y" ] || \
+    [ "$a" = "" ]; then
+        
+        connectiontest
+        clear
+        echo "  Updating sources..."
+		sleep 2s
+		sudo apt-get update
+		clear
+        
+        
+        if ! sudo apt-get install -y iceweasel; then
+            clear
+            echo ""
+            echo "  There was a problem installing Iceweasel."
+            echo ""
+            echo "  Hit any key to try again, or \"q\" to quit..."
+            read -n1 a
+            if [ "$a" = "q" ] || [ "$a" = "Q" ]; then
+                clear
+                exit 0
+            else
+                cb-x-www-browser-pipemenu --install-iceweasel
+                exit 0
+            fi
+        else
+            clear
+            echo ""
+            echo "  Iceweasel has been installed successfully."
+            echo ""
+            echo "  Hit any key to exit..."
+            read -n1 a
+            exit 0
+        fi
+    else
+        exit 0
+    fi
+fi
+
+if [ "$1" = "--install-midori" ]; then
+    clear
+    echo ""
+    echo "  INSTALL MIDORI BROWSER"
+    echo "  ---------------------------------"
+    echo "  This script will install Midori."
+    echo ""
+    echo -n "  Run the installer now? (Y|n) > "
+    read a
+    if [ "$a" = "y" ] || [ "$a" = "Y" ] || \
+    [ "$a" = "" ]; then
+        
+        connectiontest
+        
+        
+        #update sources
+        echo "  Updating sources..."
+		sleep 2s
+		sudo apt-get update
+		clear
+        
+        
+        if ! sudo apt-get install -y midori; then
+            clear
+            echo ""
+            echo "  There was a problem installing Google Chrome."
+            echo ""
+            echo "  Hit any key to try again, or \"q\" to quit..."
+            read -n1 a
+            if [ "$a" = "q" ] || [ "$a" = "Q" ]; then
+                clear
+                exit 0
+            else
+                cb-x-www-browser-pipemenu --install-midori
+                exit 0
+            fi
+        else
+            clear
+            echo ""
+            echo "  Midori has been installed successfully."
+            echo ""
+            echo "  Hit any key to exit..."
+            read -n1 a
+            exit 0
+        fi
+    else
+        exit 0
+    fi
+fi
+
+if [ "$1" = "--install-netsurf" ]; then
+    clear
+    echo ""
+    echo "  INSTALL NETSURF BROWSER"
+    echo "  -------------------------"
+    echo "  This script will install Netsurf."
+    echo ""
+    echo -n "  Run the installer now? (Y|n) > "
+    read a
+    if [ "$a" = "y" ] || [ "$a" = "Y" ] || \
+    [ "$a" = "" ]; then
+        
+        connectiontest
+        
+        
+        if ! sudo apt-get install -y netsurf; then
+            clear
+            echo ""
+            echo "  There was a problem installing Netsurf."
+            echo ""
+            echo "  Hit any key to try again, or \"q\" to quit..."
+            read -n1 a
+            if [ "$a" = "q" ] || [ "$a" = "Q" ]; then
+                clear
+                exit 0
+            else
+                cb-x-www-browser-pipemenu --install-netsurf
+                exit 0
+            fi
+        else
+            clear
+            echo ""
+            echo "  Netsurf has been installed successfully."
+            echo ""
+            echo "  Hit any key to exit..."
+            read -n1 a
+            exit 0
+        fi
+    else
+        exit 0
+    fi
+fi
+# Start pipemenu
+echo "    <openbox_pipe_menu>"
+
+# Chromium
+if [ -x "/usr/bin/chromium-browser" ];then
+    I=$((I+1))
+    cat << _menu_
+	    <item label="Chromium Browser">
+            <action name="Execute">
+				<execute>
+					chromium-browser
+				</execute>
+			</action>
+		</item>
+		<item label="Chromium Browser (Private Mode)">
+            <action name="Execute">
+				<execute>
+					chromium-browser --incognito
+				</execute>
+			</action>
+		</item>
+_menu_
+else
+	cat << _menu_
+	    <item label="Install Chromium Browser">
+            <action name="Execute">
+				<execute>
+					cb-x-www-browser-pipemenu --chromium-browser
+				</execute>
+			</action>
+		</item>
+_menu_
+fi
+
+# Iceweasel
+if [ -x "/usr/bin/iceweasel" ];then
+    I=$((I+1))
+    cat << _menu_
+	    <item label="Iceweasel">
+            <action name="Execute">
+				<execute>
+					iceweasel
+				</execute>
+			</action>
+		</item>
+_menu_
+else
+	cat << _menu_
+	    <item label="Install Iceweasel">
+            <action name="Execute">
+				<execute>
+					cb-x-www-browser-pipemenu --iceweasel
+				</execute>
+			</action>
+		</item>
+_menu_
+fi
+
+# Midori
+if [ -x "/usr/bin/midori" ];then
+    I=$((I+1))
+    cat << _menu_
+	    <item label="Midori">
+            <action name="Execute">
+				<execute>
+					midori
+				</execute>
+			</action>
+		</item>
+_menu_
+else
+	cat << _menu_
+	    <item label="Install Midori">
+            <action name="Execute">
+				<execute>
+					cb-x-www-browser-pipemenu --midori
+				</execute>
+			</action>
+		</item>
+_menu_
+fi
+
+# Netsurf
+if [ -x "/usr/bin/netsurf" ];then
+    I=$((I+1))
+    cat << _menu_
+	    <item label="Netsurf">
+            <action name="Execute">
+				<execute>
+					netsurf
+				</execute>
+			</action>
+		</item>
+_menu_
+else
+	cat << _menu_
+	    <item label="Install Netsurf">
+            <action name="Execute">
+				<execute>
+					cb-x-www-browser-pipemenu --netsurf
+				</execute>
+			</action>
+		</item>
+_menu_
+fi
+
+# Configure default
+if [ $I -gt 1 ];then
+    cat << _menu_
+	    <separator/>
+	    <item label="Select default browser">
+            <action name="Execute">
+				<execute>
+					terminator --command="sudo update-alternatives --config x-www-browser"
+				</execute>
+			</action>
+		</item>
+_menu_
+fi
+# End pipemenu
+echo "    </openbox_pipe_menu>"
+exit 0
