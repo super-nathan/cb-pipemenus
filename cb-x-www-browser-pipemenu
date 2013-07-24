@@ -17,22 +17,22 @@ fi
 I=0
 
 if [ "$1" = "--chromium-browser" ]; then
-    terminator --title="Install Chromium Browser" --command="cb-x-www-browser-pipemenu --install-chromium-browser"
+    x-terminal-emulator --title="Install Chromium Browser" --command="cb-x-www-browser-pipemenu --install-chromium-browser"
     exit 0
 fi
 
 if [ "$1" = "--iceweasel" ]; then
-    terminator --title="Install Iceweasel Browser" --command="cb-x-www-browser-pipemenu --install-iceweasel"
+    x-terminal-emulator --title="Install Iceweasel Browser" --command="cb-x-www-browser-pipemenu --install-iceweasel"
     exit 0
 fi
 
 if [ "$1" = "--midori" ]; then
-    terminator --title="Install Midori Browser" --command="cb-x-www-browser-pipemenu --install-midori"
+    x-terminal-emulator --title="Install Midori Browser" --command="cb-x-www-browser-pipemenu --install-midori"
     exit 0
 fi
 
 if [ "$1" = "--netsurf" ]; then
-    terminator --title="Install Netsurf Browser" --command="cb-x-www-browser-pipemenu --install-netsurf"
+    x-terminal-emulator --title="Install Netsurf Browser" --command="cb-x-www-browser-pipemenu --install-netsurf"
     exit 0
 fi
 
@@ -337,7 +337,7 @@ if [ $I -gt 1 ];then
 	    <item label="Select default browser">
             <action name="Execute">
 				<execute>
-					terminator --command="sudo update-alternatives --config x-www-browser"
+					x-terminal-emulator --command="sudo update-alternatives --config x-www-browser"
 				</execute>
 			</action>
 		</item>
