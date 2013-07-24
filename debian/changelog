@@ -1,3 +1,9 @@
+cb-pipemenus (0.0.2) unstable; urgency=low
+
+  * getting rid of terminator
+
+ -- "Super" Nathan Weber <supernathansunshine@gmail.com>  Wed, 24 Jul 2013 19:26:30 +0900
+
 cb-pipemenus (0.0.1) unstable; urgency=low
 
   * Initial release. (Closes: #XXXXXX)
