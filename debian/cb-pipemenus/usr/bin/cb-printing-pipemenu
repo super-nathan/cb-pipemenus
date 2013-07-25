@@ -19,7 +19,7 @@ fi
 INSTALLED=false
 
 if [ "$1" = "--install" ]; then
-    x-terminal-emulator --title="Install Printer Support" --command="cb-printing-pipemenu --install-printing"
+    lxterminal --title="Install Printer Support" --command="cb-printing-pipemenu --install-printing"
     exit 0
 fi
 if [ "$1" = "--install-printing" ]; then

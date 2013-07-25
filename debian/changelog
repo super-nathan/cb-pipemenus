@@ -1,3 +1,9 @@
+cb-pipemenus (0.0.3) unstable; urgency=low
+
+  * fucking terminal
+
+ -- "Super" Nathan Weber <supernathansunshine@gmail.com>  Thu, 25 Jul 2013 20:47:25 +0900
+
 cb-pipemenus (0.0.2) unstable; urgency=low
 
   * getting rid of terminator

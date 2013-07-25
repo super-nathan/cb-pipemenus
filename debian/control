@@ -7,7 +7,7 @@ Standards-Version: 3.9.0
 Homepage: http://pibang.org/
 
 Package: cb-pipemenus
-Depends: openbox lxterminal
+Depends: openbox, lxterminal
 Architecture: all
 Description: Simple Openbox pipemenus for PiBang Linux
 

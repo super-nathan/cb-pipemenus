@@ -1,11 +1,11 @@
 297ba890525b6d80c02b7d1b3ce2ec4c  usr/bin/cb-help-pipemenu
-ed99846f47b6efa098e94537c3faed23  usr/bin/cb-libreoffice-pipemenu
+a33671c88a1683d05fcde958d6491248  usr/bin/cb-libreoffice-pipemenu
 209987f275aa762b96ebc751e9d10e70  usr/bin/cb-lock
-d0e4b78ede9b8004049b5d49c558d4b0  usr/bin/cb-places-pipemenu
-83ab70512884c573da3e43705531db08  usr/bin/cb-printing-pipemenu
+1bc5e3c9f2e7771ca27bf6beda7d688e  usr/bin/cb-places-pipemenu
+3684135ffc8e40a5de348f639baccd67  usr/bin/cb-printing-pipemenu
 6b0531d9d2bd756e628808d1f2a70b19  usr/bin/cb-recent-files-pipemenu
-58a32736a07a363d844d6f17c69e6d8d  usr/bin/cb-remote-desktop-pipemenu
+7071921ec137b96d75ffa215439e5421  usr/bin/cb-remote-desktop-pipemenu
 4bdcc0b6911127098777a7d754fc8f37  usr/bin/cb-sshconfig-pipemenu
-e34f8635e547bb9db2543441d78b7bad  usr/bin/cb-x-www-browser-pipemenu
-4c6e7d6b45a5dd5df8dbcd8d4a14ad09  usr/share/doc/cb-pipemenus/changelog.gz
+1acc1705e1fd887bd275c30db8ab91ee  usr/bin/cb-x-www-browser-pipemenu
+06ce14f594d6992c25c37a69ab90d535  usr/share/doc/cb-pipemenus/changelog.gz
 c067833d59c446e2a79c5a5c7a258430  usr/share/doc/cb-pipemenus/copyright
