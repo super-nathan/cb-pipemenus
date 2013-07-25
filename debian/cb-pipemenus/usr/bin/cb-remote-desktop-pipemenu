@@ -17,12 +17,12 @@ fi
 I=0
 
 if [ "$1" = "--viewer" ]; then
-    terminator --title="Install VNC Viewer" --command="cb-remote-desktop-pipemenu --install-viewer"
+    x-terminal-emulator --title="Install VNC Viewer" --command="cb-remote-desktop-pipemenu --install-viewer"
     exit 0
 fi
 
 if [ "$1" = "--server" ]; then
-    terminator --title="Install VNC Server" --command="cb-remote-desktop-pipemenu --install-server"
+    x-terminal-emulator --title="Install VNC Server" --command="cb-remote-desktop-pipemenu --install-server"
     exit 0
 fi
 

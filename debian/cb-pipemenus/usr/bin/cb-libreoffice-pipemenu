@@ -19,7 +19,7 @@ fi
 INSTALLED=false
 
 if [ "$1" = "--install" ]; then
-    terminator --title="Install LibreOffice" --command="cb-libreoffice-pipemenu --install-lo"
+    x-terminal-emulator --title="Install LibreOffice" --command="cb-libreoffice-pipemenu --install-lo"
     exit 0
 fi
 if [ "$1" = "--install-lo" ]; then
